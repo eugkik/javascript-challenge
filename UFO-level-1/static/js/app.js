@@ -19,6 +19,9 @@ button.on("click", runFilter);
 
 // create filter for date
 function runFilter() {
+    // prevent the page from refreshing
+    d3.event.preventDefault();
+    
     var inputDateElement = d3.select("#datetime");
     var inputDate = inputDateElement.property("value");
     var filteredData = tableData.filter(d => d.datetime === inputDate);
